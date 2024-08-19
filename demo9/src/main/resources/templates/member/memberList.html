@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 스타일을 지정 */
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>사용자 목록</h1>
+    
+    <table border="1px">
+        <tr>
+            <!-- 제목컬럼 (굵음, 중앙정렬)-->
+            <th width="10%">사용자 번호</th>
+            <th width="10%">이름</th>
+            <th width="10%">아이디</th>
+            <th width="10%">등록일</th>
+            <th width="10%">관리자로변경</th>
+        </tr>
+
+        <!-- 제어문 
+            리스트의 사이즈가 0이면 메세지 처리
+            아니면 목록을 출력
+            #lists.isEmpty : 타임리트의 유틸리티를 이용하여 리스트가 비어 있는지 확인
+        -->
+        <th:block th:if="${#lists.isEmpty(memberList)}">
+            <!--5칸을 한칸으로 합치기-->
+            <tr>
+                <td colspan="5" style="text-align: center;" class="center">등록된 사용자가 없습니다.</td>
+            </tr>
+        </th:block>
+
+        <th:block th:unless="${#lists.isEmpty(memberList)}">
+            <th:block th:each="member:${memberList}">
+                <tr>
+                    <td th:text="${member.m_no}"></td> 
+                    <td>
+                        <!--th:href를 사용하여 파라메터를 전달합니다.-->
+                        <a th:href="@{/member/memberDetail(m_no=${member.m_no})}" th:text="${member.name}"></a>
+                    </td> 
+                    <td th:text="${member.id}"></td> 
+                    <td th:text="${member.regdate}"></td> 
+                    <td><button>관리자로 변경</button></td>
+                </tr>
+            </th:block>
+        </th:block>
+    </table>
+</body>
+</html>

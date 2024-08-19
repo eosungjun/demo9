@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- msg 출력후 뒤로가기 -->
+    <!-- 메세지 출력후 url로 이동-->
+    <script th:inline="javascript">
+        // javascript 에서 변수 선언
+        // 전역변수
+        // 서버에서 넘어온 값을 출력 
+        // th:inline : script 태그안에 있는 타임리프문장을 출력할때 문자인 경우 ''로 감싸주는 역할
+        var msg = [[${msg}]];
+        // 중복선언 불가능
+        // 지역변수
+        let letMsg = 'let msg';
+        // 상수
+        const constMsg = 'const msg';
+        // error : 상수는 값을 변경 할 수 없다
+        //constMsg = 'const';
+
+        if(msg!=null){
+            alert(msg);
+            history.back();
+        }
+
+    </script>
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

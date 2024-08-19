@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- inline방식으로 파일의 내부에 스크립트 또는 CSS를 정의 할 수 있습니다.-->
+    <!--스크립트는 스크립트 태그 안에 작성-->
+    <script>
+        alert('test');  // 확인버튼
+        let res = confirm('정말 삭제 하시겠습니까?');     // 확인, 취소버튼
+        alert('res : ' + res);
+        if(res){
+            alert('확인을 선택 -> 삭제처리 고고');
+        } 
+
+
+    </script>
+    <!-- 스타일은 스타일 태그 안에 작성-->
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>스크립트 테스트</h2>
+    <button id="btn1">btn1</button>
+    <script>
+        // 버튼이 클릭되면 실행할 함수를 지정
+        btn1.onclick = function(){
+            alert('btn1을 클릭 했어요!!')
+        };
+
+    </script>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
